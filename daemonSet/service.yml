@@ -1,0 +1,33 @@
+# Text file
+
+#########################################################
+#    AUTEUR : Serigne Saliou NDIAYE
+#    VERSION:
+#    MODIFIE:
+#
+#    DESCRIPTION
+#########################################################
+
+
+# Fonctions #############################################
+
+
+
+# Variables ############################################
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-exporter
+  namespace: monitoring
+  labels:
+    app: node-exporter
+spec:
+  selector:
+    app: node-exporter
+  ports:
+  - name: metrics
+    port: 9100
+    targetPort: 9100
+

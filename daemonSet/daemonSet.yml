@@ -1,0 +1,55 @@
+# Text file
+
+#########################################################
+#    AUTEUR : Serigne Saliou NDIAYE
+#    VERSION:
+#    MODIFIE:
+#
+#    DESCRIPTION
+#########################################################
+
+
+# Fonctions #############################################
+
+
+
+# Variables ############################################
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-exporter
+  namespace: monitoring
+  labels:
+    app: node-exporter
+spec:
+  selector:
+    matchLabels:
+      app: node-exporter
+  template:
+    metadata:
+      labels:
+        app: node-exporter
+    spec:
+      serviceAccountName: node-exporter
+      hostPID: true
+      containers:
+      - name: node-exporter
+        image: quay.io/prometheus/node-exporter:v1.8.0
+        args:
+          - --path.rootfs=/host
+        ports:
+        - name: metrics
+          containerPort: 9100
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 65534
+        volumeMounts:
+        - name: host
+          mountPath: /host
+          readOnly: true
+      volumes:
+      - name: host
+        hostPath:
+          path: /
+

@@ -1,0 +1,23 @@
+# Text file
+
+#########################################################
+#    AUTEUR : Serigne Saliou NDIAYE
+#    VERSION:
+#    MODIFIE:
+#
+#    DESCRIPTION
+#########################################################
+
+
+# Fonctions #############################################
+
+
+
+# Variables ############################################
+
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+
