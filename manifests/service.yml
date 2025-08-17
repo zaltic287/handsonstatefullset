@@ -1,0 +1,30 @@
+# Text file
+
+#########################################################
+#    AUTEUR : Serigne Saliou NDIAYE
+#    VERSION:
+#    MODIFIE:
+#
+#    DESCRIPTION
+#########################################################
+
+
+# Fonctions #############################################
+
+
+
+# Variables ############################################
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  ports:
+  - port: 3306
+    name: mysql
+  clusterIP: None  # Headless service
+  selector:
+    app: mysql
+
