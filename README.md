@@ -99,6 +99,3 @@ spec:
 Un **IP public** sera attribué automatiquement.
 
 ---
-
-👉 Tu veux que je t’écrive un **manifeste complet avec un Service LoadBalancer** pour exposer MySQL à l’extérieur, ou bien tu préfères que je te montre la méthode plus sécurisée avec `port-forward` ?
-
